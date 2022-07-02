@@ -1,0 +1,23 @@
+.user_image {
+    width: 2em !important;
+    height: 2em !important;
+}
+.dropdown-toggle::after{
+    content: none !important;
+}
+
+.card{
+    box-shadow: 1px,1px ,2px,rgba(0 ,0, 0.08) !important;
+}
+
+.status {
+    margin-bottom: 10px !important;
+    font-size: $small-font-size !important;
+}
+
+.card-text{
+
+    font-family: 'Noto Naskh Arabic' !important;
+    font-size: 1.3em !important;
+}
+
