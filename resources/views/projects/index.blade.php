@@ -17,15 +17,15 @@
                         <div class="card-body">
                             <div class="status">
                                 @switch($project->status)
-                                    @case(1)
+                                    @case(0)
                                         <span class="text-success">مكتمل</span>
                                     @break
 
-                                    @case(2)
+                                    @case(1)
                                         <span class="text-danger">ملغي</span>
                                     @break
 
-                                    @case(3)
+                                    @case(2)
                                         <span class="text-warning">غير مكتمل</span>
                                     @break
                                 @endswitch
