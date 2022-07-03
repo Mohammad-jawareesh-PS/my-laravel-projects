@@ -9,7 +9,7 @@
             <form action="/projects/{{ $project->id }}" method="post" dir="rtl">
                 @method('PATCH')
                 @include('projects.form')
-                <div class="form-group d-flex flex-row-reverse">
+                <div class="form-group d-flex flex-row-reverse mt-4">
                     <button type="submit" class="btn btn-primary">تعديل</button>
                     <a href="/projects" class="btn btn-light">الغاء</a>
                 </div>
