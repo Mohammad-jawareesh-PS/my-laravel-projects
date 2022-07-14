@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProjectStoreRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -38,14 +39,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectStoreRequest $request )
     {
-        $data = request()->validate([
-            'title' => 'required',
-            'description' => 'required',
-
-
-        ]);
+        $data  = $request->safe()->except(['status']);
         $data['user_id'] = auth()->id();
         Project::create($data);
         return redirect('/projects');
@@ -82,13 +78,9 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(ProjectStoreRequest $request, Project $project)
     {
-        $data = request()->validate([
-            'title' => 'sometimes|required',
-            'description' => 'sometimes|required',
-            'status' => 'sometimes|required',
-        ]);
+        $data = $request->validated();
         $project->update($data);
         return redirect('/projects/' . $project->id);
     }

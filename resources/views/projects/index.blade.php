@@ -16,6 +16,7 @@
                     <div class="card text-right" style="height:230px ">
                         <div class="card-body">
                             <div class="status">
+<<<<<<< Updated upstream
                                 @switch($project->status)
                                     @case(0)
                                         <span class="text-success">مكتمل</span>
@@ -29,6 +30,10 @@
                                         <span class="text-warning">غير مكتمل</span>
                                     @break
                                 @endswitch
+=======
+                                @include('projects.partials.project_status',['status'=>$project->status])
+>>>>>>>
+
                                 <h5 class="font-weight-bold card-title">
                                     <a href="/projects/{{ $project->id }}">{{ $project->title }}</a>
                                 </h5>

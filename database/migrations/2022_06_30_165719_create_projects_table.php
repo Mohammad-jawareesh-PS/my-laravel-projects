@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->unsignedBigInteger('status')->default(3);
+            // $table->unsignedBigInteger('status')->default(2);
+            $table->enum('status', ['complete', 'cancelled','incomplete'])->default('incomplete');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
