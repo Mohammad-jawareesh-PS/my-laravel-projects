@@ -3,10 +3,10 @@
 @section('title','الصفحه الرئيسيه')
     <header class="d-flex justify-content-between align-items-center my-5" dir="rtl">
         <div class="h6 text-dark">
-            <a href="/projects">المهام</a>
+            <a href="/projects">المواد</a>
         </div>
         <div>
-            <a href="/projects/create" class="btn btn-primary px-4" role="button">اضافة مهمه جديده</a>
+            <a href="/projects/create" class="btn btn-primary px-4" role="button">اضافة مادة جديدة</a>
         </div>
     </header>
     <section dir="rtl">
@@ -16,23 +16,7 @@
                     <div class="card text-right" style="height:230px ">
                         <div class="card-body">
                             <div class="status">
-<<<<<<< Updated upstream
-                                @switch($project->status)
-                                    @case(0)
-                                        <span class="text-success">مكتمل</span>
-                                    @break
-
-                                    @case(1)
-                                        <span class="text-danger">ملغي</span>
-                                    @break
-
-                                    @case(2)
-                                        <span class="text-warning">غير مكتمل</span>
-                                    @break
-                                @endswitch
-=======
                                 @include('projects.partials.project_status',['status'=>$project->status])
->>>>>>>
 
                                 <h5 class="font-weight-bold card-title">
                                     <a href="/projects/{{ $project->id }}">{{ $project->title }}</a>
@@ -48,10 +32,10 @@
                 </div>
                 @empty
                     <div class="m-auto align-content-center text-center">
-                        <p>لا يوجد اي مهام </p>
+                        <p>لا يوجد اي مواد </p>
                         <div class="mt-5">
                             <a href="/projects/create" class="btn btn-primary btn-lg d-inline-flex align-items-center"
-                                role="button">اضافه مهمه جديده</a>
+                                role="button">اضافه مادة جديدة</a>
                         </div>
                     </div>
                 @endforelse

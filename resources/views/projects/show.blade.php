@@ -6,7 +6,7 @@
             <a href="/projects">المهام/{{ $project->title }}</a>
         </div>
         <div>
-            <a href="/projects/{{ $project->id }}/edit" class="btn btn-primary px-4" role="button">تعديل المهمه</a>
+            <a href="/projects/{{ $project->id }}/edit" class="btn btn-primary px-4" role="button">تعديل المادة</a>
         </div>
     </header>
     <section class="row text-rigth" dir="rtl">
@@ -28,7 +28,7 @@
             </div>
             <div class="card mt-4">
                 <div class="card-body">
-                    <h5 class="font-weight-bold">تعديل حاله المهمه</h5>
+                    <h5 class="font-weight-bold">تعديل حاله المادة</h5>
                     <form action="/projects/{{$project->id}}" method="POST">
                         @csrf
                         @method('PATCH')
